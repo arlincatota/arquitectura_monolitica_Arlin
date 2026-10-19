@@ -1,20 +1,291 @@
-<h1>HOLA MUNDIRIJILLO</h1>
-<br>
-<br>
-<table border="1"> 
-    <tr>
-        <th>APELLIDO</th>
-        <th>NOMBRES</th>
-        <th>EMAIL</th>
-        <th>DIRECCION</th>
-        <th>ACERCA DE MI</th>
-    </tr>
-    <tr>
-        <td>Catota</td>
-        <td>Arlin</td>
-        <th>arlincatota@gmail.com</th>
-        <td>Latacunga</td>
-        <td>Soy estudiante de la carrera de ingeniería de software y en mi tiempo libre juego videojuegos y basketball</td>
-    </tr>
-</table>
-<img src="Gema.jpeg" width="200">
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Aprende las diferencias entre arquitectura monolítica y microservicios con explicaciones, diagramas, video y un cuestionario interactivo.">
+  <meta name="theme-color" content="#0b1220">
+  <title>Arquitectura de Software | Monolito y Microservicios</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/quiz.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <header>
+    <nav class="navbar navbar-expand-lg site-nav sticky-top" aria-label="Navegación principal">
+      <div class="container">
+        <a class="navbar-brand" href="#inicio"><span class="brand-mark"><i class="bi bi-diagram-3-fill" aria-hidden="true"></i></span> Arquitectura <span>de Software</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir o cerrar menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link" href="#inicio">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#monolitica">Monolítica</a></li>
+            <li class="nav-item"><a class="nav-link" href="#microservicios">Microservicios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#comparativa">Comparativa</a></li>
+            <li class="nav-item"><a class="nav-link" href="#video">Video</a></li>
+            <li class="nav-item"><a class="nav-link" href="#cuestionario">Cuestionario</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="contenido">
+    <section class="hero-section" id="inicio">
+      <div class="hero-glow" aria-hidden="true"></div>
+      <div class="container position-relative">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7">
+            <span class="eyebrow"><i class="bi bi-stars" aria-hidden="true"></i> Guía educativa de arquitectura</span>
+            <h1>Arquitectura Monolítica <span>vs.</span> Microservicios</h1>
+            <p class="hero-copy">Descubre cómo se estructuran las aplicaciones modernas, cuáles son sus diferencias y qué arquitectura elegir según las necesidades de un proyecto.</p>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a class="btn btn-primary btn-lg" href="#monolitica">Explorar arquitecturas <i class="bi bi-arrow-down-right" aria-hidden="true"></i></a>
+              <a class="btn btn-outline-light btn-lg" href="#cuestionario">Evaluar mis conocimientos</a>
+            </div>
+            <div class="hero-tags" aria-label="Temas">
+              <span>Escalabilidad</span><span>Mantenibilidad</span><span>Despliegue</span><span>Comunicación</span>
+            </div>
+          </div>
+          <div class="col-lg-5">
+            <div class="architecture-preview" aria-label="Diagrama que compara una aplicación monolítica con varios microservicios">
+              <div class="preview-column">
+                <span class="preview-label">MONOLITO</span>
+                <div class="mono-stack">
+                  <div><i class="bi bi-window" aria-hidden="true"></i> Interfaz</div>
+                  <div><i class="bi bi-gear" aria-hidden="true"></i> Negocio</div>
+                  <div><i class="bi bi-database" aria-hidden="true"></i> Datos</div>
+                </div>
+                <span class="preview-caption">Una unidad desplegable</span>
+              </div>
+              <div class="preview-divider" aria-hidden="true"><i class="bi bi-arrow-left-right"></i></div>
+              <div class="preview-column">
+                <span class="preview-label">MICROSERVICIOS</span>
+                <div class="micro-grid">
+                  <span>Usuarios</span><span>Pedidos</span><span>Pagos</span><span>Catálogo</span>
+                </div>
+                <span class="preview-caption">Servicios y APIs</span>
+              </div>
+              <div class="preview-orbit orbit-one" aria-hidden="true"></div>
+              <div class="preview-orbit orbit-two" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="monolitica">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">01 · Una aplicación, una unidad</span>
+          <h2>Arquitectura <span>monolítica</span></h2>
+          <p>Una aplicación monolítica reúne sus funciones principales en una sola unidad que se construye y despliega en conjunto. Puede estar organizada internamente en módulos bien definidos.</p>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-7">
+            <article class="content-card h-100">
+              <h3>¿Cómo funciona?</h3>
+              <p>La interfaz, la lógica del negocio y el acceso a datos viven en una aplicación integrada. Sus componentes suelen comunicarse mediante llamadas internas, sin necesitar una red entre cada módulo.</p>
+              <div class="diagram mono-diagram" role="img" aria-label="Diagrama monolítico: interfaz, lógica de negocio y acceso a datos dentro de una aplicación">
+                <span class="diagram-title">Aplicación monolítica</span>
+                <div class="diagram-layer"><i class="bi bi-window" aria-hidden="true"></i> Interfaz de usuario</div>
+                <div class="diagram-connector" aria-hidden="true"></div>
+                <div class="diagram-layer"><i class="bi bi-cpu" aria-hidden="true"></i> Lógica de negocio</div>
+                <div class="diagram-connector" aria-hidden="true"></div>
+                <div class="diagram-layer"><i class="bi bi-database" aria-hidden="true"></i> Acceso a datos</div>
+                <span class="diagram-boundary">Se construye y despliega como una unidad</span>
+              </div>
+              <p class="small-note mb-0">Un monolito no tiene que ser desordenado: una estructura modular ayuda a mantener límites claros dentro de la aplicación.</p>
+            </article>
+          </div>
+          <div class="col-lg-5">
+            <article class="content-card h-100">
+              <h3>Ventajas y consideraciones</h3>
+              <ul class="feature-list">
+                <li class="positive"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Desarrollo y puesta en marcha inicial relativamente sencillos.</span></li>
+                <li class="positive"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Despliegue centralizado y comunicación interna directa.</span></li>
+                <li class="positive"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Adecuado para empezar con proyectos pequeños y equipos reducidos.</span></li>
+                <li class="caution"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>El crecimiento puede aumentar la complejidad y el acoplamiento.</span></li>
+                <li class="caution"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Escalar una función por separado suele ser más difícil.</span></li>
+                <li class="caution"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Los cambios normalmente requieren desplegar la aplicación completa.</span></li>
+              </ul>
+              <div class="callout"><strong>Ejemplos:</strong> herramientas internas, sitios institucionales o productos iniciales con un dominio manejable.</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad section-alt" id="microservicios">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">02 · Servicios autónomos</span>
+          <h2>Arquitectura de <span>microservicios</span></h2>
+          <p>La aplicación se organiza como un conjunto de servicios pequeños y autónomos, cada uno responsable de una capacidad de negocio. Por lo general se pueden desplegar de forma independiente.</p>
+        </div>
+        <div class="row g-4 align-items-stretch">
+          <div class="col-lg-5 order-lg-1">
+            <article class="content-card h-100">
+              <h3>Ventajas y desafíos</h3>
+              <ul class="feature-list">
+                <li class="positive"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Permiten desplegar y escalar servicios de forma selectiva.</span></li>
+                <li class="positive"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Equipos pueden trabajar con mayor autonomía y elegir tecnologías apropiadas.</span></li>
+                <li class="positive"><i class="bi bi-check-circle-fill" aria-hidden="true"></i><span>Un fallo puede aislarse, según cómo se diseñe el sistema.</span></li>
+                <li class="caution"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Aumentan la complejidad operativa, el monitoreo y las pruebas.</span></li>
+                <li class="caution"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Las llamadas de red pueden añadir latencia y fallos de comunicación.</span></li>
+                <li class="caution"><i class="bi bi-exclamation-circle-fill" aria-hidden="true"></i><span>Los datos distribuidos requieren cuidar consistencia y seguridad.</span></li>
+              </ul>
+              <div class="callout"><strong>Ejemplos:</strong> plataformas complejas cuyos dominios y necesidades de escala están bien diferenciados.</div>
+            </article>
+          </div>
+          <div class="col-lg-7 order-lg-0">
+            <article class="content-card h-100">
+              <h3>¿Cómo se comunican?</h3>
+              <p>Cada servicio implementa una capacidad concreta. Los servicios colaboran mediante APIs o mensajería; la comunicación distribuida exige diseñar para latencia, fallos y observabilidad.</p>
+              <div class="diagram micro-diagram" role="img" aria-label="Diagrama de microservicios independientes que se comunican a través de una API">
+                <span class="diagram-title">Servicios independientes</span>
+                <div class="service-grid">
+                  <div class="service-node"><i class="bi bi-people" aria-hidden="true"></i><span>Usuarios</span></div>
+                  <div class="service-node"><i class="bi bi-bag" aria-hidden="true"></i><span>Pedidos</span></div>
+                  <div class="service-node"><i class="bi bi-credit-card" aria-hidden="true"></i><span>Pagos</span></div>
+                  <div class="service-node"><i class="bi bi-box-seam" aria-hidden="true"></i><span>Catálogo</span></div>
+                </div>
+                <div class="api-line"><span>APIs / mensajería</span></div>
+                <div class="client-node"><i class="bi bi-window" aria-hidden="true"></i> Aplicación cliente</div>
+              </div>
+              <p class="small-note mb-0">La distribución no garantiza aislamiento: disponibilidad, reintentos y límites entre servicios deben diseñarse con cuidado.</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="comparativa">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">03 · Diferencias clave</span>
+          <h2>Comparar para <span>decidir</span></h2>
+          <p>Ninguna arquitectura es universalmente superior. El contexto del producto y la capacidad del equipo son determinantes.</p>
+        </div>
+        <div class="table-responsive comparison-wrap">
+          <table class="table comparison-table align-middle">
+            <caption class="visually-hidden">Comparación de características entre arquitectura monolítica y microservicios</caption>
+            <thead><tr><th scope="col">Criterio</th><th scope="col">Monolítica</th><th scope="col">Microservicios</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Estructura</th><td>Componentes en una aplicación integrada, posiblemente modular.</td><td>Servicios autónomos alineados con capacidades de negocio.</td></tr>
+              <tr><th scope="row">Despliegue</th><td>La aplicación normalmente se despliega como una unidad.</td><td>Los servicios pueden desplegarse por separado.</td></tr>
+              <tr><th scope="row">Escalabilidad</th><td>Se escala la aplicación, incluso si solo una parte lo necesita.</td><td>Se pueden escalar servicios con demanda diferenciada.</td></tr>
+              <tr><th scope="row">Comunicación</th><td>Llamadas internas directas.</td><td>APIs o mensajería a través de la red.</td></tr>
+              <tr><th scope="row">Complejidad inicial</th><td>Por lo general, menor complejidad operativa.</td><td>Mayor: infraestructura y coordinación distribuida.</td></tr>
+              <tr><th scope="row">Mantenimiento</th><td>Puede complicarse con el crecimiento y alto acoplamiento.</td><td>Facilita cambios aislados si los límites están bien definidos.</td></tr>
+              <tr><th scope="row">Aislamiento de fallos</th><td>Un fallo puede afectar a una parte amplia del sistema.</td><td>Puede aislarse mejor, aunque depende de la implementación.</td></tr>
+              <tr><th scope="row">Equipos</th><td>Coordinación sobre una base de código y entrega común.</td><td>Equipos autónomos por servicio, con coordinación entre dominios.</td></tr>
+              <tr><th scope="row">Infraestructura</th><td>Normalmente más simple para comenzar.</td><td>Requiere automatización, observabilidad y operación maduras.</td></tr>
+              <tr><th scope="row">Uso orientativo</th><td>Productos iniciales o sistemas de dominio acotado.</td><td>Sistemas complejos con dominios y escalas diferenciadas.</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="row g-4 mt-4">
+          <div class="col-md-4"><article class="choice-card"><span class="choice-icon"><i class="bi bi-box" aria-hidden="true"></i></span><h3>Monolito</h3><p>Una opción práctica cuando se busca simplicidad de desarrollo y operación para un producto de alcance acotado.</p></article></div>
+          <div class="col-md-4"><article class="choice-card"><span class="choice-icon"><i class="bi bi-grid-1x2" aria-hidden="true"></i></span><h3>Monolito modular</h3><p>Organiza internamente los límites del dominio sin asumir toda la complejidad de un sistema distribuido.</p></article></div>
+          <div class="col-md-4"><article class="choice-card"><span class="choice-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span><h3>Microservicios</h3><p>Pueden ser apropiados con dominios claros, escalas distintas y equipos preparados para operar servicios.</p></article></div>
+        </div>
+        <div class="decision-panel mt-4">
+          <h3><i class="bi bi-signpost-split" aria-hidden="true"></i> ¿Qué arquitectura debería elegir?</h3>
+          <p>Evalúa el tamaño y la complejidad del proyecto, la experiencia del equipo, la escala necesaria, la frecuencia de despliegue, la disponibilidad, el presupuesto y la evolución esperada. Elige la opción más simple que cubra las necesidades reales y revisa la decisión cuando cambien.</p>
+          <strong>Los microservicios no son automáticamente mejores: distribuyen también la complejidad.</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad section-alt" id="video">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">04 · Aprende con contenido audiovisual</span>
+          <h2>Refuerza lo <span>aprendido</span></h2>
+          <p>Repasa las ideas principales con el video educativo incluido en el proyecto.</p>
+        </div>
+        <div class="video-shell">
+          <video class="lesson-video" controls preload="metadata" aria-label="Video educativo sobre arquitecturas monolíticas y microservicios">
+            <source src="video/Video.mp4" type="video/mp4">
+            Tu navegador no puede reproducir este video. Prueba con un navegador actualizado.
+          </video>
+          <p class="video-help"><i class="bi bi-info-circle" aria-hidden="true"></i> Para reemplazarlo, coloca tu video MP4 en <code>video/Video.mp4</code> o actualiza la ruta del elemento de video en <code>index.html</code>.</p>
+          <p class="video-error" role="status" hidden>No se pudo cargar el video. Comprueba que el archivo <code>video/Video.mp4</code> exista y sea un MP4 válido.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pad" id="cuestionario">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">05 · Comprueba lo que aprendiste</span>
+          <h2>Pon a prueba tus <span>conocimientos</span></h2>
+          <p>Responde las preguntas y descubre cuánto has aprendido sobre ambas arquitecturas.</p>
+        </div>
+        <div class="quiz-shell" id="quiz-app">
+          <div class="quiz-topline">
+            <span id="question-counter">Pregunta 1 de 10</span>
+            <span class="quiz-progress-label" id="progress-label">Progreso: 0%</span>
+          </div>
+          <div class="progress quiz-progress" role="progressbar" aria-label="Progreso del cuestionario" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+            <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
+          </div>
+          <form id="quiz-form" novalidate>
+            <fieldset class="question-area">
+              <legend id="question-text" class="question-title" tabindex="-1"></legend>
+              <div class="options-list" id="answer-options"></div>
+            </fieldset>
+            <p class="quiz-message" id="quiz-message" role="status" aria-live="polite"></p>
+            <div class="quiz-controls">
+              <button class="btn btn-outline-light" id="previous-button" type="button"><i class="bi bi-arrow-left" aria-hidden="true"></i> Anterior</button>
+              <div class="d-flex gap-2 ms-auto">
+                <button class="btn btn-primary" id="next-button" type="button">Siguiente <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+                <button class="btn btn-primary" id="finish-button" type="submit" hidden>Finalizar cuestionario <i class="bi bi-check2" aria-hidden="true"></i></button>
+              </div>
+            </div>
+          </form>
+          <div id="quiz-results" class="quiz-results" aria-live="polite" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="creator-section">
+      <div class="container">
+        <div class="creator-card">
+          <div class="creator-copy">
+            <span class="eyebrow">Sobre el creador</span>
+            <h2>¡Hola, a todos</h2>
+            <p class="creator-intro">Esta página fue creada por <strong>Arlin Catota</strong>, estudiante de Ingeniería de Software en Latacunga.</p>
+            <dl class="creator-details">
+              <div><dt>Nombre</dt><dd>Arlin Catota</dd></div>
+              <div><dt>Correo</dt><dd><a href="mailto:arlincatota@gmail.com">arlincatota@gmail.com</a></dd></div>
+              <div><dt>Ubicación</dt><dd>Latacunga</dd></div>
+              <div><dt>Intereses</dt><dd>Videojuegos y basketball</dd></div>
+            </dl>
+            <p class="pet-caption"><i class="bi bi-heart-fill" aria-hidden="true"></i> Gema, mi mascota</p>
+          </div>
+          <figure class="pet-figure">
+            <img src="img/Gema.jpeg" alt="Gema, la mascota de Arlin" loading="lazy">
+            <figcaption>Gema</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container d-flex flex-column flex-sm-row justify-content-between align-items-center gap-3">
+      <p class="mb-0">Arquitectura de Software · Material educativo</p>
+      <a href="#inicio">Volver al inicio <i class="bi bi-arrow-up" aria-hidden="true"></i></a>
+    </div>
+  </footer>
+</body>
+</html>
