@@ -1,15 +1,3 @@
-const video = document.querySelector(".lesson-video");
-const videoError = document.querySelector(".video-error");
-
-if (video && videoError) {
-  video.addEventListener("error", () => {
-    videoError.hidden = false;
-  });
-  video.addEventListener("loadedmetadata", () => {
-    videoError.hidden = true;
-  });
-}
-
 const navigation = document.querySelector("#mainNav");
 if (navigation && window.bootstrap) {
   navigation.querySelectorAll(".nav-link").forEach((link) => {

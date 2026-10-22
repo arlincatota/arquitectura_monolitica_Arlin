@@ -1,6 +1,6 @@
 # Arquitectura de Software: monolito y microservicios
 
-Sitio web educativo y responsivo para aprender sobre arquitectura monolítica y microservicios. Incluye diagramas, tabla comparativa, video y un cuestionario interactivo de diez preguntas. También presenta la información del creador y a Gema, su mascota.
+Sitio web educativo y responsivo para aprender sobre arquitectura monolítica y microservicios. Incluye diagramas, tabla comparativa, un reproductor de TikTok y un cuestionario interactivo de diez preguntas. También presenta la información del creador y a Gema, su mascota.
 
 ## Tecnologías
 
@@ -17,7 +17,6 @@ css/styles.css
 js/main.js
 js/quiz.js
 img/Gema.jpeg
-video/Video.mp4
 ```
 
 ## Ejecutar en Codespaces
@@ -32,7 +31,7 @@ Después abre el puerto 8000 en el navegador. No se necesita un servidor de apli
 
 ## Personalización
 
-- **Video:** el video actual se carga desde `video/Video.mp4`. Para cambiarlo, reemplaza ese archivo por un MP4 propio o modifica la ruta del elemento `<source>` en `index.html`. El reproductor carga metadatos y no descarga automáticamente el video completo.
+- **Video:** se reproduce con el reproductor oficial de TikTok en `index.html`. Para cambiarlo, actualiza el identificador en la URL del iframe.
 - **Foto de Gema:** reemplaza `img/Gema.jpeg` por otra imagen y actualiza la ruta y el texto alternativo de la imagen en `index.html`.
 - **Preguntas:** edita el arreglo `questions` en `js/quiz.js`. Cada entrada contiene `id`, `question`, `options`, `correctAnswer` (índice desde cero) y `explanation`.
 - **Colores:** cambia las variables CSS de `:root` al inicio de `css/styles.css`.
@@ -40,4 +39,4 @@ Después abre el puerto 8000 en el navegador. No se necesita un servidor de apli
 
 ## Limitaciones
 
-El reproductor utiliza un archivo MP4 local; no incluye subtítulos porque no se proporcionó un archivo WebVTT. El cuestionario funciona en el navegador y no guarda resultados después de recargar la página.
+El video embebido está sujeto a la disponibilidad y las políticas de TikTok. El cuestionario funciona en el navegador y no guarda resultados después de recargar la página.
